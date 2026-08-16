@@ -1,171 +1,182 @@
-# ICC.gg Sign-In for OpenID Connect
+# ICC.gg Redis Object Cache Enabler
 
-A WordPress plugin that provides SSO (Single Sign-On) authentication against an OpenID Connect OAuth2 Identity Provider using Authorization Code Flow.
+A WordPress plugin that provides a persistent object cache backend powered by Redis®¹. It supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.
 
 <!-- buttons -->
-[![Stars](https://img.shields.io/github/stars/ivancarlosti/wordpressiccopenidclient?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/wordpressiccopenidclient/stargazers)
-[![Watchers](https://img.shields.io/github/watchers/ivancarlosti/wordpressiccopenidclient?label=Watchers&style=flat&color=red)](https://github.com/sponsors/ivancarlosti)
-[![Forks](https://img.shields.io/github/forks/ivancarlosti/wordpressiccopenidclient?label=Forks&style=flat&color=ff69b4)](https://github.com/sponsors/ivancarlosti)
-[![Downloads](https://img.shields.io/github/downloads/ivancarlosti/wordpressiccopenidclient/total?label=Downloads&color=success)](https://github.com/ivancarlosti/wordpressiccopenidclient/releases)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/wordpressiccopenidclient?label=Activity)](https://github.com/ivancarlosti/wordpressiccopenidclient/pulse)
-[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/wordpressiccopenidclient?label=Issues&color=orange)](https://github.com/ivancarlosti/wordpressiccopenidclient/issues)  
-[![License](https://img.shields.io/github/license/ivancarlosti/wordpressiccopenidclient?label=License)](LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/wordpressiccopenidclient?label=Last%20Commit)](https://github.com/ivancarlosti/wordpressiccopenidclient/commits)
-[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/wordpressiccopenidclient/security)
-[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/wordpressiccopenidclient?tab=coc-ov-file)
+[![Stars](https://img.shields.io/github/stars/ivancarlosti/icc-gg-redis-object-cache-enabler?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/stargazers)
+[![Watchers](https://img.shields.io/github/watchers/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Watchers&style=flat&color=red)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/watchers)
+[![Forks](https://img.shields.io/github/forks/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Forks&style=flat&color=ff69b4)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/forks)
+[![Downloads](https://img.shields.io/github/downloads/ivancarlosti/icc-gg-redis-object-cache-enabler/total?label=Downloads&color=success)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/releases)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Activity)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/pulse)
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Issues&color=orange)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/issues)
+[![License](https://img.shields.io/github/license/ivancarlosti/icc-gg-redis-object-cache-enabler?label=License)](LICENSE.md)
+[![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Last%20Commit)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/commits)
+[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/security)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler?tab=coc-ov-file)
 <!-- endbuttons -->
 
 ## Features
 
-- **Auto Login (SSO)** — Automatically redirect users to the Identity Provider for authentication
-- **Login Button** — Add a "Login with OpenID Connect" button to the WordPress login form
-- **JWT Signature Verification** — JWKS-based JWT validation to prevent token forgery
-- **User Auto-Creation** — Automatically create WordPress users from IDP claims
-- **Link Existing Users** — Link existing WordPress accounts to IDP identities
-- **Email Domain Restriction** 🔒 — Restrict login to specific email domains (e.g., `company.com`) or full email addresses (e.g., `specificuser@gmail.com`). Leave empty to allow all
-- **Token Refresh** — Automatic access token refresh for supported IDPs
-- **End Session Support** — Redirect to IDP logout endpoint on WordPress logout
-- **Discovery Document Import** — Auto-populate settings from `.well-known/openid-configuration`
-- **Shortcodes** — `[icc_gg_sign_in_openid_connect_login_button]` and `[icc_gg_sign_in_openid_connect_auth_url]`
+- **Redis Object Cache Backend** — A drop-in [`object-cache.php`](includes/object-cache.php:1) replacement that stores WordPress object cache data in Redis
+- **Multiple Clients** — Works with [Predis](https://github.com/predis/predis/) (bundled), [PhpRedis (PECL)](https://github.com/phpredis/phpredis) and [Relay](https://relaycache.com)
+- **High Availability** — Supports replication, sentinels, clustering and sharding
+- **One-Click Management** — Enable, disable, flush and update the object cache drop-in from **Settings → Redis**
+- **Metrics Dashboard** — Track hit ratio, hits, misses, cache size, calls and response time with charts
+- **Diagnostics** — Inspect the Redis server, client, connection and key configuration
+- **Dashboard Widget** — View cache performance directly from the WordPress dashboard
+- **Admin Bar Integration** — See cache status and flush the cache from the admin bar
+- **Query Monitor Integration** — Inspect cache activity with the Query Monitor plugin
+- **WP-CLI Support** — Enable, disable, update and inspect the object cache from the command line
+- **Multisite Support** — Network-aware settings and cache groups
+- **Graceful Degradation** — Optionally fall back to the default cache when Redis is unreachable
 
 ## Requirements
 
 - WordPress 5.0+
 - PHP 8.1+
-- An OpenID Connect Identity Provider (Keycloak, Auth0, Okta, Azure AD, Google, etc.)
+- A running Redis server
+- One of the following clients:
+  - [Predis](https://github.com/predis/predis/) (bundled with the plugin)
+  - [PhpRedis](https://github.com/phpredis/phpredis) (PECL extension)
+  - [Relay](https://relaycache.com) (extension)
 
 ## Installation
 
 1. Download the plugin or clone this repository into `/wp-content/plugins/`
 2. Activate the plugin through the WordPress admin panel
-3. Go to **Settings > OpenID Connect** to configure
+3. Go to **Settings → Redis** to configure and enable the object cache
 
 ## Quick Setup
 
-Use the **Discovery Document Import** feature on the settings page:
+1. Activate the plugin and open **Settings → Redis**
+2. (Optional) Define your connection settings in `wp-config.php` — see the [Configuration](#configuration) section below
+3. Click **Enable Object Cache** to install the `object-cache.php` drop-in
+4. Verify the status shows **Connected** in the **Overview** tab
 
-1. Enter your IDP's discovery URL (e.g., `https://your-idp.com/.well-known/openid-configuration`)
-2. Click **Load Configuration**
-3. Fill in your **Client ID** and **Client Secret**
-4. Click **Save Changes**
+The plugin defaults to connecting to `127.0.0.1:6379` with database `0` when no connection constants are defined.
 
-Supported IDPs:
-- Auth0: `https://{tenant}.{region}.auth0.com/.well-known/openid-configuration`
-- Keycloak: `https://{domain}/realms/{realm}/.well-known/openid-configuration`
-- Okta: `https://{domain}/.well-known/openid-configuration`
-- Azure AD: `https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration`
-- Google: `https://accounts.google.com/.well-known/openid-configuration`
+## Configuration
 
-## Configuration Reference
+All settings can be defined as PHP constants in `wp-config.php` for added security and CI/CD support.
 
-### OAuth Client Settings
+### Connection
 
-| Setting | Description |
+| Constant | Description | Default |
+|---|---|---|
+| `WP_REDIS_HOST` | The Redis server hostname or IP address | `127.0.0.1` |
+| `WP_REDIS_PORT` | The Redis server port | `6379` |
+| `WP_REDIS_DATABASE` | The Redis database index | `0` |
+| `WP_REDIS_PASSWORD` | The Redis password (optional) | `null` |
+| `WP_REDIS_USERNAME` | The Redis ACL username (optional) | `null` |
+| `WP_REDIS_SCHEME` | The connection scheme (`tcp`, `unix`, `tls`, `rediss`, etc.) | `tcp` |
+| `WP_REDIS_PATH` | The socket path when using a Unix socket | `null` |
+| `WP_REDIS_TIMEOUT` | Connection timeout in seconds | `1` |
+| `WP_REDIS_READ_TIMEOUT` | Read timeout in seconds | `1` |
+| `WP_REDIS_RETRY_INTERVAL` | Retry interval in milliseconds | `null` |
+
+### Replication, Clustering & Sharding
+
+| Constant | Description |
 |---|---|
-| **Client ID** | The ID your client is recognized as by the Identity Provider |
-| **Client Secret** | The secret key the IDP expects from your client |
-| **Scope** | Space-separated list of scopes (e.g., `openid profile email`) |
-| **Login Endpoint URL** | The authorization endpoint of your IDP |
-| **Token Validation Endpoint URL** | The token endpoint of your IDP |
-| **Userinfo Endpoint URL** | The user information endpoint |
-| **End Session Endpoint URL** | The logout endpoint (optional) |
-| **JWKS URI** | JWKS endpoint for JWT signature verification (**strongly recommended**) |
-| **Issuer** | IDP issuer URL for JWT validation (auto-derived if not set) |
+| `WP_REDIS_SERVERS` | Array of servers for replication (e.g., `['tcp://127.0.0.1:6379', 'tcp://127.0.0.1:6380']`) |
+| `WP_REDIS_SHARDS` | Array of shard groups for client-side sharding |
+| `WP_REDIS_CLUSTER` | Array of cluster nodes for Redis Cluster |
+| `WP_REDIS_SENTINEL` | Array of sentinel nodes for high availability |
 
-### User Settings
+### Keys & Expiration
 
-| Setting | Description |
+| Constant | Description |
 |---|---|
-| **Email Domain Restriction** 🔒 | Space-separated list of allowed email domains (e.g., `company.com`) or full email addresses (e.g., `specificuser@gmail.com`). Leave empty to allow all |
-| **Link Existing Users** | Match IDP identities to existing WordPress accounts by email |
-| **Create user if does not exist** | Auto-create new WordPress users on first login |
-| **Redirect Back to Origin Page** | Return users to the page they were on before login |
+| `WP_REDIS_PREFIX` | Key prefix for this site's cache |
+| `WP_REDIS_SELECTIVE_FLUSH` | Flush only keys with `WP_REDIS_PREFIX` when set to `true` |
+| `WP_REDIS_MAXTTL` | Maximum time-to-live for cache keys, in seconds |
 
-### Environment Variables / Constants
+### Groups
 
-All settings can be defined as PHP constants for added security and CI/CD support:
+| Constant | Description |
+|---|---|
+| `WP_REDIS_GLOBAL_GROUPS` | Array of groups that are shared across a multisite network |
+| `WP_REDIS_IGNORED_GROUPS` | Array of groups that are ignored by Redis |
+| `WP_REDIS_UNFLUSHABLE_GROUPS` | Array of groups that are not flushed on `wp_cache_flush()` |
+
+### Behavior
+
+| Constant | Description |
+|---|---|
+| `WP_REDIS_CLIENT` | Force the Redis client (`predis`, `phpredis` or `relay`) |
+| `WP_REDIS_DISABLED` | Disable the object cache entirely when set to `true` |
+| `WP_REDIS_GRACEFUL` | Fail gracefully to the default cache when Redis is unreachable |
+| `WP_REDIS_DISABLE_DROPIN_BANNERS` | Hide drop-in related admin notices |
+| `WP_REDIS_DISABLE_DROPIN_AUTOUPDATE` | Disable automatic drop-in updates |
+| `WP_REDIS_DISABLE_DROPIN_CHECK` | Skip filesystem write checks for the drop-in |
+| `WP_REDIS_DISABLE_ADMINBAR` | Hide the admin bar menu item |
+| `WP_REDIS_DISABLE_COMMENT` | Disable the HTML performance comment in the page source |
+| `WP_REDIS_MANAGER_CAPABILITY` | Override the capability required to manage Redis |
+| `WP_REDIS_SSL_CONTEXT` | SSL context options for TLS connections |
+| `WP_REDIS_FLUSH_TIMEOUT` | Read timeout in seconds used when flushing the cache | `5` |
+
+Example:
 
 ```php
-define( 'OIDC_CLIENT_ID', 'your-client-id' );
-define( 'OIDC_CLIENT_SECRET', 'your-client-secret' );
-define( 'OIDC_ENDPOINT_LOGIN_URL', 'https://idp.example.com/auth' );
-define( 'OIDC_ENDPOINT_TOKEN_URL', 'https://idp.example.com/token' );
-define( 'OIDC_ENDPOINT_USERINFO_URL', 'https://idp.example.com/userinfo' );
-define( 'OIDC_ENDPOINT_LOGOUT_URL', 'https://idp.example.com/logout' );
-define( 'OIDC_ENDPOINT_JWKS_URL', 'https://idp.example.com/certs' );
-define( 'OIDC_CLIENT_SCOPE', 'openid profile email' );
-define( 'OIDC_LOGIN_TYPE', 'button' );
-define( 'OIDC_EMAIL_DOMAIN_RESTRICTION', 'company.com specificuser@gmail.com partner.org' );
-define( 'OIDC_CREATE_IF_DOES_NOT_EXIST', true );
-define( 'OIDC_LINK_EXISTING_USERS', true );
-define( 'OIDC_ENFORCE_PRIVACY', false );
-define( 'OIDC_REDIRECT_ON_LOGOUT', true );
-define( 'OIDC_REDIRECT_USER_BACK', false );
-define( 'OIDC_ENABLE_LOGGING', false );
-define( 'OIDC_LOG_LIMIT', 1000 );
+define( 'WP_REDIS_HOST', '127.0.0.1' );
+define( 'WP_REDIS_PORT', 6379 );
+define( 'WP_REDIS_DATABASE', 0 );
+define( 'WP_REDIS_PASSWORD', 'your-redis-password' );
+define( 'WP_REDIS_CLIENT', 'phpredis' );
+define( 'WP_REDIS_PREFIX', 'mysite' );
+define( 'WP_REDIS_MAXTTL', 86400 );
+define( 'WP_REDIS_GRACEFUL', true );
 ```
 
-## Redirect URI
+## WP-CLI
 
-The default redirect URI registered with your IDP should be:
+The plugin registers the `icc-gg-redis-object-cache-enabler` command:
 
-```
-https://your-site.com/wp-admin/admin-ajax.php?action=icc-gg-sign-in-openid-connect-authorize
+```bash
+wp icc-gg-redis-object-cache-enabler status
+wp icc-gg-redis-object-cache-enabler enable
+wp icc-gg-redis-object-cache-enabler disable
+wp icc-gg-redis-object-cache-enabler update-dropin
 ```
 
-If your IDP doesn't support query strings in redirect URIs, enable **Alternate Redirect URI** in settings to use:
-
-```
-https://your-site.com/icc-gg-sign-in-openid-connect-authorize
-```
+To flush the cache from the command line, use the built-in `wp cache flush` command.
 
 ## Hooks & Filters
 
-The plugin provides many hooks for customization. See the main plugin file for the complete list including:
+The plugin provides actions and filters for customization. See [`object-cache.php`](includes/object-cache.php:1) for the complete list including:
 
-- `icc_gg_sign_in_openid_connect_user_login_test` — Control whether a user can log in based on their claim
-- `icc_gg_sign_in_openid_connect_user_creation_test` — Control whether a new user can be created
-- `icc_gg_sign_in_openid_connect_alter_user_claim` — Modify user claim data before user creation
-- `icc_gg_sign_in_openid_connect_alter_user_data` — Modify user data before insertion
-- `icc_gg_sign_in_openid_connect_login_button_text` — Customize the login button text
-- `icc_gg_sign_in_openid_connect_user_logged_in` — Action fired after successful login
+**Actions**
 
-## Security
+- `icc_gg_redis_object_cache_enabler_enable` — Fired after the object cache is enabled
+- `icc_gg_redis_object_cache_enabler_disable` — Fired after the object cache is disabled
+- `icc_gg_redis_object_cache_enabler_update_dropin` — Fired after the drop-in is updated
+- `icc_gg_redis_object_cache_enabler_delete` — Fired when a key is deleted
+- `icc_gg_redis_object_cache_enabler_get` — Fired when a key is retrieved
+- `icc_gg_redis_object_cache_enabler_get_multiple` — Fired when multiple keys are retrieved
+- `icc_gg_redis_object_cache_enabler_set` — Fired when a key is stored
+- `icc_gg_redis_object_cache_enabler_flush` — Fired when the cache is flushed
+- `icc_gg_redis_object_cache_enabler_flush_group` — Fired when a cache group is flushed
+- `icc_gg_redis_object_cache_enabler_error` — Fired when an error occurs
 
-- JWKS-based JWT signature verification to prevent token forgery
-- Cryptographically secure state generation (`random_bytes`)
-- SSRF protection via `wp_safe_remote_*` by default
-- SSL verification bypass restricted to local development environments only
-- Nonce-protected settings forms
-- Email domain restriction for access control
+**Filters**
 
-## User Authentication & Creation
+- `icc_gg_redis_object_cache_enabler_expiration` — Modify the expiration of a cache key
+- `icc_gg_redis_object_cache_enabler_get_value` — Modify a value before it is returned
+- `icc_gg_redis_object_cache_enabler_add_non_persistent_groups` — Modify non-persistent groups
+- `icc_gg_redis_object_cache_enabler_validate_dropin` — Modify the drop-in validation state
+- `icc_gg_redis_object_cache_enabler_manager_capability` — Modify the capability required to manage Redis
 
-This plugin creates and authenticates WordPress users as a technical necessity of its core function — OpenID Connect Single Sign-On. User sessions are established only after successful authentication by the configured Identity Provider. User accounts are created only when explicitly enabled by the site administrator and only after the IDP has verified the user's identity.
+## Troubleshooting
 
-**Security measures protecting user login/creation:**
+Answers to common questions and troubleshooting of common errors can be found in the upstream [Redis Object Cache FAQ](https://github.com/rhubarbgroup/redis-cache/blob/develop/FAQ.md).
 
-| Measure | Description |
-|---------|-------------|
-| JWT Signature Verification | All ID tokens are cryptographically verified via JWKS to prevent forgery |
-| Secure State Generation | Anti-CSRF state values use `random_bytes()` to prevent code interception |
-| SSRF Protection | All outbound requests use `wp_safe_remote_*()` by default |
-| Core WordPress Functions | Uses `wp_create_user()`, `wp_update_user()`, `wp_signon()` — triggering all standard security plugin hooks |
-| Email Domain Restriction | Administrators can restrict which email domains/addresses are allowed |
-| Token Claim Validation | Validates exp, aud, iss, iat, and nonce claims on every token |
-| Nonce Protection | All admin forms are protected against CSRF |
-
-## About OpenID Connect
-
-OpenID Connect (OIDC) is an open authentication protocol standardized by the **OpenID Foundation**. It extends the OAuth 2.0 authorization framework to provide identity verification and single sign-on capabilities. This plugin implements the OIDC Authorization Code Flow as defined in the [OpenID Connect Core 1.0 specification](https://openid.net/specs/openid-connect-core-1_0.html), enabling WordPress sites to delegate authentication to a trusted Identity Provider (IDP) rather than managing user credentials directly.
-
-The OpenID Foundation is a non-profit international standardization organization that develops and maintains the OpenID Connect protocol and related specifications. **This plugin is an independent implementation and is not affiliated with, endorsed by, or sponsored by the OpenID Foundation.**
+¹ Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by ICC.gg Redis Object Cache Enabler is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and ICC.gg Redis Object Cache Enabler.
 
 ## Credits
 
-**ICC.gg Sign-In for OpenID Connect** is maintained by [Ivan Carlos](https://github.com/ivancarlosti).
+**ICC.gg Redis Object Cache Enabler** is maintained by [Ivan Carlos](https://github.com/ivancarlosti).
 
-Based on [OpenID Connect Generic](https://github.com/oidc-wp/openid-connect-generic) by [daggerhart](https://github.com/daggerhart).
+This plugin is a fork of [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache) by [Till Krüss](https://github.com/tillkruss).
 
 <!-- footer -->
 ---
