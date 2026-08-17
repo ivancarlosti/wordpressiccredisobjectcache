@@ -275,8 +275,8 @@ class ICC_GG_Redis_Object_Cache_Enabler_Plugin
 
 		$plugin_meta[] = sprintf(
 			'<a href="%1$s" target="_blank" rel="noopener">%2$s</a>',
-			'https://github.com/rhubarbgroup/redis-cache',
-			esc_html__( 'Based on Redis Object Cache by Till Krüss', 'icc-gg-redis-object-cache-enabler' )
+			'https://github.com/ivancarlosti/wordpressiccredisobjectcache/releases',
+			esc_html__( 'Check for updates', 'icc-gg-redis-object-cache-enabler' )
 		);
 
 		return $plugin_meta;
@@ -1152,7 +1152,7 @@ HTML;
 			return;
 		}
 
-		$message = 'Performance optimized by ICC.gg Redis Object Cache Enabler. Based on Redis Object Cache by Till Krüss.';
+		$message = 'Performance optimized by ICC.gg Redis Object Cache Enabler.';
 
 		if ( ! WP_DEBUG_DISPLAY ) {
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

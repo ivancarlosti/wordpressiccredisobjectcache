@@ -16,7 +16,7 @@ A persistent object cache backend powered by Redis®¹. Supports [Predis](https:
 
 To adjust the connection parameters, prefix cache keys or configure replication/clustering, see the [configuration options](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler#configuration).
 
-This plugin is a fork of [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache) by Till Krüss, with all functional free features preserved.
+This plugin is a fork of [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache), with all functional free features preserved.
 
 ¹ Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by ICC.gg Redis Object Cache Enabler is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and ICC.gg Redis Object Cache Enabler.
 
@@ -48,6 +48,6 @@ ICC.gg Redis Object Cache Enabler provides various WP CLI commands. For more inf
 == Changelog ==
 
 = 1.0.0 =
-* Initial release, forked from Redis Object Cache by Till Krüss.
+* Initial release, forked from Redis Object Cache.
 * Removed commercial add-on promotions.
 * Rebranded as ICC.gg Redis Object Cache Enabler.

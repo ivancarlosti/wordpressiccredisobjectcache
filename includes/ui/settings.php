@@ -74,18 +74,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p>
 					<?php esc_html_e( 'A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.', 'icc-gg-redis-object-cache-enabler' ); ?>
 				</p>
-				<p>
-					<?php
-					echo wp_kses_post(
-						sprintf(
-							/* translators: %1$s is the upstream plugin link, %2$s is the original author. */
-							__( 'Based on %1$s by %2$s.', 'icc-gg-redis-object-cache-enabler' ),
-							'<a href="https://github.com/rhubarbgroup/redis-cache" target="_blank" rel="noopener">Redis Object Cache</a>',
-							'Till Krüss'
-						)
-					);
-					?>
-				</p>
 			</div>
 
 		</div>

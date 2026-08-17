@@ -12,7 +12,7 @@ Full license text: http://www.gnu.org/licenses/gpl-2.0.txt
 
 ## Upstream attribution
 
-This plugin is based on [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache) by Till Krüss, licensed under GPLv3.
+This plugin is based on [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache), licensed under GPLv3.
 
 Bundled third-party dependencies retain their original licenses:
 

@@ -266,8 +266,6 @@ msgstr ""
 msgid "Based on %1$s by %2$s."
 msgstr ""
 
-msgid "Based on Redis Object Cache by Till Krüss"
-msgstr ""
 
 msgid "Copy diagnostics to clipboard"
 msgstr ""

@@ -13,11 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @author    Ivan Carlos
  * @copyright 2023-2026 Ivan Carlos
  * @license   http://www.gnu.org/licenses/gpl-2.0.txt GPL-2.0+
- * @link      https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler
+ * @link      https://github.com/ivancarlosti/wordpressiccredisobjectcache
  *
  * @wordpress-plugin
  * Plugin Name:       ICC.gg Redis Object Cache Enabler
- * Plugin URI:        https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler
+ * Plugin URI:        https://github.com/ivancarlosti/wordpressiccredisobjectcache
  * Description:       A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.
  * Version:           1.0.0
  * Requires at least: 5.0
@@ -190,5 +190,27 @@ if ( ! function_exists( 'icc_gg_redis_object_cache_enabler' ) ) {
 		return ICC_GG_Redis_Object_Cache_Enabler_Plugin::instance();
 	}
 }
+
+/**
+ * Initialize the GitHub updater.
+ *
+ * Runs on `init` and also during the WordPress cron job so the plugin can be
+ * updated automatically, mirroring the updater bootstrap used by plugins that
+ * rely on a custom update server.
+ *
+ * @return void
+ */
+function icc_gg_redis_object_cache_enabler_init_github_updater() {
+	$doing_cron = defined( 'DOING_CRON' ) && DOING_CRON;
+	if ( ! current_user_can( 'manage_options' ) && ! $doing_cron ) {
+		return;
+	}
+
+	new ICC_GG_Redis_Object_Cache_Enabler_Github_Updater(
+		ICC_GG_REDIS_OBJECT_CACHE_ENABLER_BASENAME,
+		ICC_GG_Redis_Object_Cache_Enabler::VERSION
+	);
+}
+add_action( 'init', 'icc_gg_redis_object_cache_enabler_init_github_updater' );
 
 } // End if ( ! class_exists( 'ICC_GG_Redis_Object_Cache_Enabler' ) ).

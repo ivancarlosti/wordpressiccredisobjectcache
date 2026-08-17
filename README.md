@@ -176,7 +176,7 @@ Answers to common questions and troubleshooting of common errors can be found in
 
 **ICC.gg Redis Object Cache Enabler** is maintained by [Ivan Carlos](https://github.com/ivancarlosti).
 
-This plugin is a fork of [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache) by [Till Krüss](https://github.com/tillkruss).
+This plugin is a fork of [Redis Object Cache](https://github.com/rhubarbgroup/redis-cache).
 
 <!-- footer -->
 ---
