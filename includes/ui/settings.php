@@ -73,8 +73,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			github.com/ivancarlosti/wordpressiccredisobjectcache
 		</a><br>
 		<?php echo esc_html( sprintf( 'v%s', ICC_GG_REDIS_OBJECT_CACHE_ENABLER_VERSION ) ); ?>
-		&mdash;
-		<?php esc_html_e( 'Based on Redis Object Cache by rhubarbgroup', 'icc-gg-redis-object-cache-enabler' ); ?>
 	</p>
 
 </div>
