@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin Name:       ICC.gg Redis Object Cache Enabler
  * Plugin URI:        https://github.com/ivancarlosti/wordpressiccredisobjectcache
  * Description:       A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.
- * Version:           1.0.0
+ * Version:           1.2.1
  * Requires at least: 5.0
  * Requires PHP:      8.1
  * Author:            ivancarlosti
@@ -110,7 +110,7 @@ class ICC_GG_Redis_Object_Cache_Enabler {
 	 *
 	 * @var string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.2.1';
 
 	/**
 	 * Simple autoloader.
