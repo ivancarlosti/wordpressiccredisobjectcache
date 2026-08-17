@@ -64,20 +64,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		</div>
 
-		<div class="sidebar-column">
-
-			<h6>
-				<?php esc_html_e( 'About', 'icc-gg-redis-object-cache-enabler' ); ?>
-			</h6>
-
-			<div class="card">
-				<p>
-					<?php esc_html_e( 'A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.', 'icc-gg-redis-object-cache-enabler' ); ?>
-				</p>
-			</div>
-
-		</div>
-
 	</div>
+
+	<hr style="margin-top: 30px;">
+	<p style="text-align: center; color: #666; font-size: 12px;">
+		<?php esc_html_e( 'ICC.gg Redis Object Cache Enabler - A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.', 'icc-gg-redis-object-cache-enabler' ); ?><br>
+		<a href="https://github.com/ivancarlosti/wordpressiccredisobjectcache" target="_blank" rel="noopener noreferrer">
+			github.com/ivancarlosti/wordpressiccredisobjectcache
+		</a><br>
+		<?php echo esc_html( 'v' . ICC_GG_REDIS_OBJECT_CACHE_ENABLER_VERSION ); ?>
+	</p>
 
 </div>

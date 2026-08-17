@@ -44,10 +44,3 @@ The plugin comes with a vast set of configuration options that can be defined in
 == WP CLI commands ==
 
 ICC.gg Redis Object Cache Enabler provides various WP CLI commands. For more information run `wp help icc-gg-redis-object-cache-enabler` after installing the plugin.
-
-== Changelog ==
-
-= 1.0.0 =
-* Initial release, forked from Redis Object Cache.
-* Removed commercial add-on promotions.
-* Rebranded as ICC.gg Redis Object Cache Enabler.

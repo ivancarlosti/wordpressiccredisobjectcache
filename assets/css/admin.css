@@ -2,14 +2,6 @@
     margin-bottom: 3em;
 }
 
-#icc-gg-redis-object-cache-enabler .sidebar-column h6 {
-    margin: 5px 0;
-    padding: 10px 0;
-    font-size: 13px;
-    line-height: 19px;
-    border-bottom: 1px solid #ccc;
-}
-
 #icc-gg-redis-object-cache-enabler .tab-pane {
     display: none;
 }
@@ -77,21 +69,6 @@
     overflow-y: scroll;
     font-family: Consolas, Monaco, monospace;
     font-size: 12px;
-}
-
-@media screen and (min-width: 1200px) {
-    #icc-gg-redis-object-cache-enabler .columns {
-        display: flex;
-    }
-
-    #icc-gg-redis-object-cache-enabler .content-column {
-        flex-grow: 1;
-    }
-
-    #icc-gg-redis-object-cache-enabler .sidebar-column {
-        max-width: 400px;
-        margin-left: 20px;
-    }
 }
 
 #dashboard_icc_gg_redis_object_cache_enabler .inside {
