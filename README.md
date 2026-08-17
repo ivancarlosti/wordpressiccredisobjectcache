@@ -3,16 +3,16 @@
 A WordPress plugin that provides a persistent object cache backend powered by Redis®¹. It supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.
 
 <!-- buttons -->
-[![Stars](https://img.shields.io/github/stars/ivancarlosti/icc-gg-redis-object-cache-enabler?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/stargazers)
-[![Watchers](https://img.shields.io/github/watchers/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Watchers&style=flat&color=red)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/watchers)
-[![Forks](https://img.shields.io/github/forks/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Forks&style=flat&color=ff69b4)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/forks)
-[![Downloads](https://img.shields.io/github/downloads/ivancarlosti/icc-gg-redis-object-cache-enabler/total?label=Downloads&color=success)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/releases)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Activity)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/pulse)
-[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Issues&color=orange)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/issues)
-[![License](https://img.shields.io/github/license/ivancarlosti/icc-gg-redis-object-cache-enabler?label=License)](LICENSE.md)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/icc-gg-redis-object-cache-enabler?label=Last%20Commit)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/commits)
-[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler/security)
-[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler?tab=coc-ov-file)
+[![Stars](https://img.shields.io/github/stars/ivancarlosti/wordpressiccredisobjectcache?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/wordpressiccredisobjectcache/stargazers)
+[![Watchers](https://img.shields.io/github/watchers/ivancarlosti/wordpressiccredisobjectcache?label=Watchers&style=flat&color=red)](https://github.com/sponsors/ivancarlosti)
+[![Forks](https://img.shields.io/github/forks/ivancarlosti/wordpressiccredisobjectcache?label=Forks&style=flat&color=ff69b4)](https://github.com/sponsors/ivancarlosti)
+[![Downloads](https://img.shields.io/github/downloads/ivancarlosti/wordpressiccredisobjectcache/total?label=Downloads&color=success)](https://github.com/ivancarlosti/wordpressiccredisobjectcache/releases)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/wordpressiccredisobjectcache?label=Activity)](https://github.com/ivancarlosti/wordpressiccredisobjectcache/pulse)
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/wordpressiccredisobjectcache?label=Issues&color=orange)](https://github.com/ivancarlosti/wordpressiccredisobjectcache/issues)  
+[![License](https://img.shields.io/github/license/ivancarlosti/wordpressiccredisobjectcache?label=License)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/wordpressiccredisobjectcache?label=Last%20Commit)](https://github.com/ivancarlosti/wordpressiccredisobjectcache/commits)
+[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/wordpressiccredisobjectcache/security)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/wordpressiccredisobjectcache?tab=coc-ov-file)
 <!-- endbuttons -->
 
 ## Features
