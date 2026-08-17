@@ -4,11 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 /**
  * Plugin Name: ICC.gg Redis Object Cache Enabler Drop-In
- * Plugin URI: https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler
+ * Plugin URI: https://github.com/ivancarlosti/wordpressiccredisobjectcache
  * Description: A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.
  * Version: 1.0.0
  * Author: ivancarlosti
- * Author URI: https://ivancarlos.me
+ * Author URI: https://ivancarlos.com.br
  * License: GPL-2.0-or-later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Requires PHP: 8.1
@@ -3068,7 +3068,7 @@ LUA;
 			$message .= '<p>' . sprintf(
 				// translators: %s = Link to installation instructions.
 				__( 'If you need help, please read the <a href="%s">installation instructions</a>.', 'icc-gg-redis-object-cache-enabler' ),
-				'https://github.com/ivancarlosti/icc-gg-redis-object-cache-enabler'
+				'https://github.com/ivancarlosti/wordpressiccredisobjectcache'
 			) . "</p>\n";
 		}
 

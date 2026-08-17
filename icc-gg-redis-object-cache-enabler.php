@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package   ICC_GG_Redis_Object_Cache_Enabler
  * @category  General
  * @author    Ivan Carlos
- * @copyright 2023-2026 Ivan Carlos
+ * @copyright 2007-2026 Ivan Carlos Consultoria
  * @license   http://www.gnu.org/licenses/gpl-2.0.txt GPL-2.0+
  * @link      https://github.com/ivancarlosti/wordpressiccredisobjectcache
  *
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Requires at least: 5.0
  * Requires PHP:      8.1
  * Author:            ivancarlosti
- * Author URI:        https://ivancarlos.me
+ * Author URI:        https://ivancarlos.com.br
  * Text Domain:       icc-gg-redis-object-cache-enabler
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

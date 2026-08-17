@@ -8,6 +8,10 @@ You should have received a copy of the GNU General Public License along with ICC
 
 Full license text: http://www.gnu.org/licenses/gpl-2.0.txt
 
+Copyright (C) 2007-2026 Ivan Carlos Consultoria
+Homepage: https://ivancarlos.com.br
+Email: ivan@ivancarlos.com.br
+
 ---
 
 ## Upstream attribution

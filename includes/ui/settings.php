@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package   ICC_GG_Redis_Object_Cache_Enabler
  * @category  General
  * @author    Ivan Carlos
- * @copyright 2023-2026 Ivan Carlos
+ * @copyright 2007-2026 Ivan Carlos Consultoria
  * @license   http://www.gnu.org/licenses/gpl-2.0.txt GPL-2.0+
  */
 ?>

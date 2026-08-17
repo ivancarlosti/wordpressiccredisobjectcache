@@ -1,5 +1,5 @@
 {
-    "name": "ivancarlosti/icc-gg-redis-object-cache-enabler",
+    "name": "ivancarlosti/wordpressiccredisobjectcache",
     "description": "A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Relay, replication, sentinels, clustering and WP-CLI.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
